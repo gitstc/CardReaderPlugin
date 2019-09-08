@@ -8,10 +8,6 @@
     ]
   },
   "description": "Card Reader Plugin",
-  "repository": {
-    "type": "local"
-  },
-  "issue": "",
   "keywords": [
     "cordova",
     "cordova-android",
