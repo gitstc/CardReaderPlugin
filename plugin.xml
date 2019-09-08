@@ -28,7 +28,8 @@
 		<header-file src="src/ios/CardReaderPlugin.h" />
 		<source-file src="src/ios/CardReaderPlugin.m" />
 
-        <source-file src="src/ios/libiMagRead.a" framework="true" />
+        <!-- <source-file src="src/ios/libiMagRead.a" framework="true"  /> -->
+        <framework src="src/ios/libiMagRead.a" />
 		<!--<framework src="AudioUnit.framework" />-->
 		<framework src="CoreAudio.framework" />
 		<framework src="AudioToolbox.framework" />
