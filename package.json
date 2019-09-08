@@ -1,0 +1,24 @@
+{
+  "name": "card-reader-plugin",
+  "version": "0.0.1",
+  "cordova": {
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "description": "Card Reader Plugin",
+  "repository": {
+    "type": "local"
+  },
+  "issue": "",
+  "keywords": [
+    "cordova",
+    "cordova-android",
+    "cordova-ios",
+    "deviceid",
+    "mac"
+  ],
+  "author": "",
+  "license": "Apache 2.0"
+}

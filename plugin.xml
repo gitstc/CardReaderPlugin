@@ -1,0 +1,61 @@
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.stc.card-reader-plugin"
+    version="0.0.1">
+
+    <name>CardReaderPlugin</name>
+
+    <engines>
+        <engine name="cordova" version=">=2.7.0" />
+    </engines>
+
+    <js-module src="www/CardReaderPlugin.js" name="CardReaderPlugin">
+        <clobbers target="window.plugins.CardReaderPlugin" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            
+            <feature name="CardReaderPlugin">
+                <param name="ios-package" value="CardReaderPlugin"/>
+            </feature>
+            
+            <plugin name="CardReaderPlugin" value="CardReaderPlugin" />
+        </config-file>
+
+        <header-file src="src/ios/iMagRead.h" />
+		<header-file src="src/ios/CardReaderPlugin.h" />
+		<source-file src="src/ios/CardReaderPlugin.m" />
+
+        <source-file src="src/ios/libiMagRead.a" framework="true" />
+		<!--<framework src="AudioUnit.framework" />-->
+		<framework src="CoreAudio.framework" />
+		<framework src="AudioToolbox.framework" />
+		<framework src="MediaPlayer.framework" />
+    </platform>
+
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            
+            <feature name="CardReaderPlugin" >
+                <param name="android-package" value="com.stc.CardReaderPlugin.CardReaderPlugin"/>
+            </feature>
+            
+            <plugin name="CardReaderPlugin" value="com.stc.CardReaderPlugin.CardReaderPlugin" />
+        </config-file>
+
+		<uses-permission android:name="android.permission.RECORD_AUDIO"></uses-permission>
+        
+        <source-file src="src/android/CardReaderPlugin.java" 
+            target-dir="src/com/stc/CardReaderPlugin" />
+		<source-file src="src/android/PluginActivity.java" 
+            target-dir="src/com/stc/PluginActivity" />
+		<source-file src="src/android/rhombuslib.jar" 
+			target-dir="libs" framework="true" />
+
+    </platform>
+   
+</plugin>
